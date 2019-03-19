@@ -296,7 +296,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-03-19T23:04:16+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-19T23:06:40+08:00">
                 2019-03-19
               </time>
             
@@ -355,7 +355,7 @@
         
           
             <p>This is a post about my graduation project<br>update soon</p>
-<h1 id="WaveNet-Vocoder"><a href="#WaveNet-Vocoder" class="headerlink" title="WaveNet Vocoder"></a>WaveNet Vocoder</h1><p><br><br><img src="/images/wavenet/wavenet.gif" alt="wavenet" title="WaveNet"><br><a href="https://arxiv.org/abs/1609.03499" target="_blank" rel="noopener">WaveNet</a>, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or mel-spectrogram, we can get high-quality speech. </p>
+<h1 id="WaveNet-Vocoder"><a href="#WaveNet-Vocoder" class="headerlink" title="WaveNet Vocoder"></a>WaveNet Vocoder</h1><p><img src="/images/wavenet/wavenet.gif" alt="wavenet" title="WaveNet"><br><a href="https://arxiv.org/abs/1609.03499" target="_blank" rel="noopener">WaveNet</a>, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or mel-spectrogram, we can get high-quality speech. </p>
 <p>My code is adapted from @ibab&#39;s <a href="https://github.com/ibab/tensorflow-wavenet" target="_blank" rel="noopener">work</a>. Temporally, I don&#39;t consider on speaker-id. Therefore I remove the code about speaker-id and add code that plus local condition to filter and gate when doing dilated convolution. </p>
 
           
