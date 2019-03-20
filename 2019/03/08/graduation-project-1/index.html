@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -59,7 +66,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -79,19 +86,20 @@
 
 
 
-<meta name="description" content="This is a post about my graduation projectupdate soon WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By co">
+<meta name="description" content="WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or">
 <meta name="keywords" content="Deep Learning,Speech Synthesis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Graduation Project Ⅰ">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/graduation-project-1/index.html">
 <meta property="og:site_name" content="Ryuc">
-<meta property="og:description" content="This is a post about my graduation projectupdate soon WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By co">
+<meta property="og:description" content="WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/wavenet/wavenet.gif">
-<meta property="og:updated_time" content="2019-03-20T04:05:30.750Z">
+<meta property="og:image" content="http://yoursite.com/images/wavenet/architecture.png">
+<meta property="og:updated_time" content="2019-03-20T06:46:00.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graduation Project Ⅰ">
-<meta name="twitter:description" content="This is a post about my graduation projectupdate soon WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By co">
+<meta name="twitter:description" content="WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or">
 <meta name="twitter:image" content="http://yoursite.com/images/wavenet/wavenet.gif">
 
 
@@ -300,7 +308,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-03-20T12:05:30+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-20T14:46:00+08:00">
                 2019-03-20
               </time>
             
@@ -356,10 +364,42 @@
       
 
       
-        <p>This is a post about my graduation project<br>update soon</p>
-<h1 id="WaveNet-Vocoder"><a href="#WaveNet-Vocoder" class="headerlink" title="WaveNet Vocoder"></a>WaveNet Vocoder</h1><p><br><br><img src="/images/wavenet/wavenet.gif" alt="wavenet" title="WaveNet"><br><a href="https://arxiv.org/abs/1609.03499" target="_blank" rel="noopener">WaveNet</a>, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or mel-spectrogram, we can get high-quality speech. </p>
-<p>My code is adapted from @ibab&#39;s <a href="https://github.com/ibab/tensorflow-wavenet" target="_blank" rel="noopener">work</a>. Temporally, I don&#39;t consider on speaker-id. Therefore I remove the code about speaker-id and add code that plus local condition to filter and gate when doing dilated convolution. </p>
-<p>wqq $\qquad$ w</p>
+        <h2 id="WaveNet-Vocoder"><a href="#WaveNet-Vocoder" class="headerlink" title="WaveNet Vocoder"></a>WaveNet Vocoder</h2><p><a href="https://arxiv.org/abs/1609.03499" target="_blank" rel="noopener">WaveNet</a>, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or mel-spectrogram, we can get high-quality speech, i.e. WaveNet Vocoder.</p>
+<p><img src="/images/wavenet/wavenet.gif" alt title="WaveNet"><br>My code is adapted from @ibab&#39;s <a href="https://github.com/ibab/tensorflow-wavenet" target="_blank" rel="noopener">work</a>. Temporally, I don&#39;t consider speaker-id. Therefore I remove the code about speaker-id and add code that plus local condition to filter and gate when doing dilated convolution. </p>
+<p>The detailed architecture of WaveNet is as shown in the following figure. </p>
+<p><img src="/images/wavenet/architecture.png" alt></p>
+<h2 id="Samples"><a href="#Samples" class="headerlink" title="Samples"></a>Samples</h2><h3 id="1-CMU-ARCTIC-slt"><a href="#1-CMU-ARCTIC-slt" class="headerlink" title="1. CMU ARCTIC slt"></a>1. CMU ARCTIC <code>slt</code></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data</td>
+<td>1032 for training, 100 for testing</td>
+</tr>
+<tr>
+<td>Input type</td>
+<td>8-bit mu-law encoded one-hot vector</td>
+</tr>
+<tr>
+<td>Sampling frequency</td>
+<td>16kHz</td>
+</tr>
+<tr>
+<td>Local conditioning</td>
+<td>40-dim MFCC + power + pitch + UV</td>
+</tr>
+<tr>
+<td>Global conditioning</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+</div>
 
       
     </div>
@@ -544,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WaveNet-Vocoder"><span class="nav-number">1.</span> <span class="nav-text">WaveNet Vocoder</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WaveNet-Vocoder"><span class="nav-number">1.</span> <span class="nav-text">WaveNet Vocoder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Samples"><span class="nav-number">2.</span> <span class="nav-text">Samples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CMU-ARCTIC-slt"><span class="nav-number">2.1.</span> <span class="nav-text">1. CMU ARCTIC slt</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -574,15 +614,9 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -629,8 +663,6 @@
   
 
 
-  
-
 
 
 
@@ -669,11 +701,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
