@@ -96,7 +96,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/wavenet/wavenet.gif">
 <meta property="og:image" content="http://yoursite.com/images/wavenet/architecture.png">
-<meta property="og:updated_time" content="2019-03-20T11:55:32.104Z">
+<meta property="og:updated_time" content="2019-03-20T13:56:19.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graduation Project Ⅰ">
 <meta name="twitter:description" content="WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or">
@@ -308,7 +308,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-03-20T19:55:32+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-20T21:56:19+08:00">
                 2019-03-20
               </time>
             
@@ -379,6 +379,55 @@
 <tr>
 <td>Data</td>
 <td>1032 for training, 100 for testing</td>
+</tr>
+<tr>
+<td>Input type</td>
+<td>8-bit mu-law encoded one-hot vector</td>
+</tr>
+<tr>
+<td>Sampling frequency</td>
+<td>16kHz</td>
+</tr>
+<tr>
+<td>Local conditioning</td>
+<td>40-dim MFCC + power + pitch + UV</td>
+</tr>
+<tr>
+<td>Global conditioning</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Samples from a model trained for 200k steps</li>
+<li>Left: generated, Right: ground truth</li>
+</ul>
+<p>$\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_a0009.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_a0009.wav" type="audio/mpeg">
+</audio><br>$\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_a0013.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_a0013.wav" type="audio/mpeg">
+</audio><br>$\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_a0507.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_a0507.wav" type="audio/mpeg">
+</audio><br>$\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_b0140.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_b0140.wav" type="audio/mpeg">
+</audio><br>$\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_b0206.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_b0206.wav" type="audio/mpeg">
+</audio><br>$\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_b0508.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_b0508.wav" type="audio/mpeg">
+</audio></p>
+<h3 id="2-Yan-Ping"><a href="#2-Yan-Ping" class="headerlink" title="2. Yan Ping"></a>2. Yan Ping</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data</td>
+<td>800 for training, 100 for testing</td>
 </tr>
 <tr>
 <td>Input type</td>
@@ -583,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WaveNet-Vocoder"><span class="nav-number">1.</span> <span class="nav-text">WaveNet Vocoder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Samples"><span class="nav-number">2.</span> <span class="nav-text">Samples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CMU-ARCTIC-slt"><span class="nav-number">2.1.</span> <span class="nav-text">1. CMU ARCTIC slt</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WaveNet-Vocoder"><span class="nav-number">1.</span> <span class="nav-text">WaveNet Vocoder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Samples"><span class="nav-number">2.</span> <span class="nav-text">Samples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CMU-ARCTIC-slt"><span class="nav-number">2.1.</span> <span class="nav-text">1. CMU ARCTIC slt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Yan-Ping"><span class="nav-number">2.2.</span> <span class="nav-text">2. Yan Ping</span></a></li></ol></li></ol></div>
             
 
           </div>
