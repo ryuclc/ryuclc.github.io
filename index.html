@@ -361,44 +361,15 @@
       
         
           
-            <h2 id="WaveNet-Vocoder"><a href="#WaveNet-Vocoder" class="headerlink" title="WaveNet Vocoder"></a>WaveNet Vocoder</h2><p><a href="https://arxiv.org/abs/1609.03499" target="_blank" rel="noopener">WaveNet</a>, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or mel-spectrogram, we can get high-quality speech, i.e. WaveNet Vocoder.</p>
-<p><img src="/images/wavenet/wavenet.gif" alt title="WaveNet"><br>My code is adapted from @ibab&#39;s <a href="https://github.com/ibab/tensorflow-wavenet" target="_blank" rel="noopener">work</a>. Temporally, I don&#39;t consider speaker-id. Therefore I remove the code about speaker-id and add code that plus local condition to filter and gate when doing dilated convolution. </p>
-<p>The detailed architecture of WaveNet is as shown in the following figure. </p>
-<p><img src="/images/wavenet/architecture.png" alt></p>
-<h2 id="Samples"><a href="#Samples" class="headerlink" title="Samples"></a>Samples</h2><h3 id="1-CMU-ARCTIC-slt"><a href="#1-CMU-ARCTIC-slt" class="headerlink" title="1. CMU ARCTIC slt"></a>1. CMU ARCTIC <code>slt</code></h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>key</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Data</td>
-<td>1032 for training, 100 for testing</td>
-</tr>
-<tr>
-<td>Input type</td>
-<td>8-bit mu-law encoded one-hot vector</td>
-</tr>
-<tr>
-<td>Sampling frequency</td>
-<td>16kHz</td>
-</tr>
-<tr>
-<td>Local conditioning</td>
-<td>40-dim MFCC + power + pitch + UV</td>
-</tr>
-<tr>
-<td>Global conditioning</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
+          WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By condit
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/08/graduation-project-1/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -528,17 +499,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/08/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
