@@ -86,21 +86,18 @@
 
 
 
-<meta name="description" content="WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or">
+<meta name="description" content="WaveNet AutoencoderAt present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...Most of them use mel-spectrogram and">
 <meta name="keywords" content="Deep Learning,Speech Synthesis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Graduation Project Ⅰ">
-<meta property="og:url" content="http://yoursite.com/2019/03/08/graduation-project-1/index.html">
+<meta property="og:title" content="Graduation Project Ⅱ">
+<meta property="og:url" content="http://yoursite.com/2019/03/21/graduation-project-2/index.html">
 <meta property="og:site_name" content="Ryuc">
-<meta property="og:description" content="WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or">
+<meta property="og:description" content="WaveNet AutoencoderAt present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...Most of them use mel-spectrogram and">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/images/wavenet/wavenet.gif">
-<meta property="og:image" content="http://yoursite.com/images/wavenet/architecture.png">
-<meta property="og:updated_time" content="2019-03-21T06:25:13.805Z">
+<meta property="og:updated_time" content="2019-03-21T06:28:49.101Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Graduation Project Ⅰ">
-<meta name="twitter:description" content="WaveNet VocoderWaveNet, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or">
-<meta name="twitter:image" content="http://yoursite.com/images/wavenet/wavenet.gif">
+<meta name="twitter:title" content="Graduation Project Ⅱ">
+<meta name="twitter:description" content="WaveNet AutoencoderAt present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...Most of them use mel-spectrogram and">
 
 
 
@@ -130,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/08/graduation-project-1/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/21/graduation-project-2/">
 
 
 
 
 
-  <title>Graduation Project Ⅰ | Ryuc</title>
+  <title>Graduation Project Ⅱ | Ryuc</title>
   
 
 
@@ -263,7 +260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/graduation-project-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/graduation-project-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chang Liu">
@@ -280,7 +277,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Graduation Project Ⅰ</h1>
+          <h1 class="post-title" itemprop="name headline">Graduation Project Ⅱ</h1>
         
 
         <div class="post-meta">
@@ -292,8 +289,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-08T15:32:38+08:00">
-                2019-03-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-21T14:00:45+08:00">
+                2019-03-21
               </time>
             
 
@@ -308,7 +305,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-03-21T14:25:13+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-21T14:28:49+08:00">
                 2019-03-21
               </time>
             
@@ -364,90 +361,7 @@
       
 
       
-        <h2 id="WaveNet-Vocoder"><a href="#WaveNet-Vocoder" class="headerlink" title="WaveNet Vocoder"></a>WaveNet Vocoder</h2><p><a href="https://arxiv.org/abs/1609.03499" target="_blank" rel="noopener">WaveNet</a>, a deep generative model of raw audio waveforms. It generates next one sample at each timestep from previous samples. By conditioning WaveNet on local condition such as MFCC or mel-spectrogram, we can get high-quality speech, i.e. WaveNet Vocoder.<br><a id="more"></a><br><img src="/images/wavenet/wavenet.gif" alt title="WaveNet"><br>My code is adapted from @ibab&#39;s <a href="https://github.com/ibab/tensorflow-wavenet" target="_blank" rel="noopener">work</a>. Temporally, I don&#39;t consider speaker-id. Therefore I remove the code about speaker-id and add code that plus local condition to filter and gate when doing dilated convolution. </p>
-<p>The detailed architecture of WaveNet is as shown in the following figure. </p>
-<p><img src="/images/wavenet/architecture.png" alt></p>
-<h2 id="Samples"><a href="#Samples" class="headerlink" title="Samples"></a>Samples</h2><h3 id="1-CMU-ARCTIC-slt"><a href="#1-CMU-ARCTIC-slt" class="headerlink" title="1. CMU ARCTIC slt"></a>1. CMU ARCTIC <code>slt</code></h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>key</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Data</td>
-<td>1032 for training, 100 for testing</td>
-</tr>
-<tr>
-<td>Input type</td>
-<td>8-bit mu-law encoded one-hot vector</td>
-</tr>
-<tr>
-<td>Sampling frequency</td>
-<td>16kHz</td>
-</tr>
-<tr>
-<td>Local conditioning</td>
-<td>40-dim MFCC + power + pitch + UV</td>
-</tr>
-<tr>
-<td>Global conditioning</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>Samples from a model trained for 200k steps</li>
-<li>Left: generated, Right: ground truth</li>
-</ul>
-<p>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_a0009.wav" type="audio/mpeg">
-</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_a0009.wav" type="audio/mpeg">
-</audio><br>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_a0013.wav" type="audio/mpeg">
-</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_a0013.wav" type="audio/mpeg">
-</audio><br>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_a0507.wav" type="audio/mpeg">
-</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_a0507.wav" type="audio/mpeg">
-</audio><br>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_b0140.wav" type="audio/mpeg">
-</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_b0140.wav" type="audio/mpeg">
-</audio><br>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_b0206.wav" type="audio/mpeg">
-</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_b0206.wav" type="audio/mpeg">
-</audio><br>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/gen_arctic_b0508.wav" type="audio/mpeg">
-</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/slt/arctic_b0508.wav" type="audio/mpeg">
-</audio></p>
-<h3 id="2-Yan-Ping"><a href="#2-Yan-Ping" class="headerlink" title="2. Yan Ping"></a>2. Yan Ping</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>key</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Data</td>
-<td>800 for training, 100 for testing</td>
-</tr>
-<tr>
-<td>Input type</td>
-<td>8-bit mu-law encoded one-hot vector</td>
-</tr>
-<tr>
-<td>Sampling frequency</td>
-<td>16kHz</td>
-</tr>
-<tr>
-<td>Local conditioning</td>
-<td>40-dim MFCC + power + pitch + UV</td>
-</tr>
-<tr>
-<td>Global conditioning</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
-</div>
+        <h2 id="WaveNet-Autoencoder"><a href="#WaveNet-Autoencoder" class="headerlink" title="WaveNet Autoencoder"></a>WaveNet Autoencoder</h2><p>At present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...<br>Most of them use mel-spectrogram and pitch as the local condition input. In contrast, my graduation project aims to learn a speech representation using neural network. Then by combining it with mel-spectrogram and pitch I expect it would get better performance.<br><a id="more"></a></p>
 
       
     </div>
@@ -480,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/03/08/graduation-project-1/" rel="next" title="Graduation Project Ⅰ">
+                <i class="fa fa-chevron-left"></i> Graduation Project Ⅰ
               </a>
             
           </div>
@@ -489,10 +403,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/21/graduation-project-2/" rel="prev" title="Graduation Project Ⅱ">
-                Graduation Project Ⅱ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -636,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WaveNet-Vocoder"><span class="nav-number">1.</span> <span class="nav-text">WaveNet Vocoder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Samples"><span class="nav-number">2.</span> <span class="nav-text">Samples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CMU-ARCTIC-slt"><span class="nav-number">2.1.</span> <span class="nav-text">1. CMU ARCTIC slt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Yan-Ping"><span class="nav-number">2.2.</span> <span class="nav-text">2. Yan Ping</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WaveNet-Autoencoder"><span class="nav-number">1.</span> <span class="nav-text">WaveNet Autoencoder</span></a></li></ol></div>
             
 
           </div>
