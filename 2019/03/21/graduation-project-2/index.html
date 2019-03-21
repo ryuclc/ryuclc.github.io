@@ -86,18 +86,20 @@
 
 
 
-<meta name="description" content="WaveNet AutoencoderAt present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...Most of them use mel-spectrogram and">
+<meta name="description" content="WaveNet AutoencoderAt present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...In contrast, my graduation project a">
 <meta name="keywords" content="Deep Learning,Speech Synthesis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Graduation Project Ⅱ">
 <meta property="og:url" content="http://yoursite.com/2019/03/21/graduation-project-2/index.html">
 <meta property="og:site_name" content="Ryuc">
-<meta property="og:description" content="WaveNet AutoencoderAt present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...Most of them use mel-spectrogram and">
+<meta property="og:description" content="WaveNet AutoencoderAt present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...In contrast, my graduation project a">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-21T06:28:49.101Z">
+<meta property="og:image" content="http://yoursite.com/images/wavenet/wnae.png">
+<meta property="og:updated_time" content="2019-03-21T10:27:54.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Graduation Project Ⅱ">
-<meta name="twitter:description" content="WaveNet AutoencoderAt present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...Most of them use mel-spectrogram and">
+<meta name="twitter:description" content="WaveNet AutoencoderAt present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...In contrast, my graduation project a">
+<meta name="twitter:image" content="http://yoursite.com/images/wavenet/wnae.png">
 
 
 
@@ -305,7 +307,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-03-21T14:28:49+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-21T18:27:54+08:00">
                 2019-03-21
               </time>
             
@@ -361,7 +363,54 @@
       
 
       
-        <h2 id="WaveNet-Autoencoder"><a href="#WaveNet-Autoencoder" class="headerlink" title="WaveNet Autoencoder"></a>WaveNet Autoencoder</h2><p>At present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...<br>Most of them use mel-spectrogram and pitch as the local condition input. In contrast, my graduation project aims to learn a speech representation using neural network. Then by combining it with mel-spectrogram and pitch I expect it would get better performance.<br><a id="more"></a></p>
+        <h2 id="WaveNet-Autoencoder"><a href="#WaveNet-Autoencoder" class="headerlink" title="WaveNet Autoencoder"></a>WaveNet Autoencoder</h2><p>At present, most of the researchs about speech synthesis concentrate on the method to generate speech e.g. Parallel-WaveNet, WaveGlow, WaveRNN...<br>In contrast, my graduation project aims to learn a speech representation using neural network. Then by combining it with mel-spectrogram and pitch I expect it would get better performance.<br><a id="more"></a></p>
+<h3 id="1-Neural-Audio-Synthesis-of-Musical-Notes-with-WaveNet-Autoencoders"><a href="#1-Neural-Audio-Synthesis-of-Musical-Notes-with-WaveNet-Autoencoders" class="headerlink" title="1. Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders"></a>1. <a href="https://arxiv.org/abs/1704.01279" target="_blank" rel="noopener">Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders</a></h3><p>This a paper published in 2017.<br>the structure this paper proposed is as shown in following figure.</p>
+<p><img src="/images/wavenet/wnae.png" alt></p>
+<h4 id="Samples"><a href="#Samples" class="headerlink" title="Samples"></a>Samples</h4><h5 id="CMU-ARCTIC-slt"><a href="#CMU-ARCTIC-slt" class="headerlink" title="CMU ARCTIC slt"></a>CMU ARCTIC <code>slt</code></h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data</td>
+<td>1032 for training, 100 for testing</td>
+</tr>
+<tr>
+<td>Input type</td>
+<td>8-bit mu-law encoded one-hot vector</td>
+</tr>
+<tr>
+<td>Sampling frequency</td>
+<td>16kHz</td>
+</tr>
+<tr>
+<td>Local conditioning</td>
+<td>latent vector from encoder</td>
+</tr>
+<tr>
+<td>Global conditioning</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Samples from a model trained for 200k steps</li>
+<li>Left: generated, Right: ground truth</li>
+</ul>
+<p>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/wnae/gen_arctic_a0105.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/wnae/arctic_a0105.wav" type="audio/mpeg">
+</audio><br>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/wnae/gen_arctic_a0349.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/wnae/arctic_a0349.wav" type="audio/mpeg">
+</audio><br>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/wnae/gen_arctic_a0456.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/wnae/arctic_a0456.wav" type="audio/mpeg">
+</audio><br>$\quad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/wnae/gen_arctic_a0522.wav" type="audio/mpeg">
+</audio> $\qquad$<audio controls preload height="100" width="100"><br>  <source src="http://home.ustc.edu.cn/~lcaily/hexo/wnae/arctic_a0522.wav" type="audio/mpeg">
+</audio></p>
 
       
     </div>
@@ -546,7 +595,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WaveNet-Autoencoder"><span class="nav-number">1.</span> <span class="nav-text">WaveNet Autoencoder</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WaveNet-Autoencoder"><span class="nav-number">1.</span> <span class="nav-text">WaveNet Autoencoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Neural-Audio-Synthesis-of-Musical-Notes-with-WaveNet-Autoencoders"><span class="nav-number">1.1.</span> <span class="nav-text">1. Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Samples"><span class="nav-number">1.1.1.</span> <span class="nav-text">Samples</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CMU-ARCTIC-slt"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">CMU ARCTIC slt</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
