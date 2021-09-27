@@ -1,0 +1,21 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "",
+    "subtitle": "home",
+    "icon": "http://yoursite.com/images/favicon.ico",
+    "description": "Ph.D. USTC",
+    "home_page_url": "http://yoursite.com",
+    "items": [
+        {
+            "id": "http://yoursite.com/pub/PSE/",
+            "url": "http://yoursite.com/pub/PSE/",
+            "title": "Phase Spectrum Recovery for Enhancing Low-Quality Speech Captured by Laser Microphones",
+            "date_published": "2021-03-01T12:45:48.000Z",
+            "content_html": "<h1 id=\"abstract\"><a class=\"anchor\" href=\"#abstract\">#</a> Abstract</h1>\n<p>This paper proposes a phase spectrum recovery method for enhancing the low-quality speech captured by laser micro-phones, which is degraded by non-additive distortions during signal acquisition. Our preliminary study shows that common speech enhancement methods based on amplitude spectrum estimation can not achieve a satisfactory performance on this task. Therefore, this paper designs a speech enhancement model which is comprised of an amplitude spectrum estimator (ASE) and a phase spectrum estimator (PSE). The ASE adopts autoregressive LSTMs and multi-target learning framework to predict clean amplitude spectra from noisy ones. The PSE first adopts a waveform-based model to enhance noisy speech in time domain, and then extracts phase spectra from the enhanced waveforms. Subsequently, the outputs of the two estimators are combined to reconstruct the final enhanced speech waveforms. Our experimental results demonstrate that our proposed method can achieve higher PESQ score than the method using only ASE and the waveform-based speech enhancement methods, including UNet and TCNN.</p>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2RvY3VtZW50LzkzNjIxMTI=\">paper</span></p>\n",
+            "tags": [
+                "Publications",
+                "Publication"
+            ]
+        }
+    ]
+}

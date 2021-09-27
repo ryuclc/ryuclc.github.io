@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title></title>
+        <subtitle>home</subtitle>
+        <icon>http://yoursite.com/images/favicon.ico</icon>
+        <link>http://yoursite.com</link>
+        <author>
+          <name>Chang Liu</name>
+        </author>
+        <description>Ph.D. USTC</description>
+        <language>en</language>
+        <pubDate>Mon, 01 Mar 2021 20:45:48 +0800</pubDate>
+        <lastBuildDate>Mon, 01 Mar 2021 20:45:48 +0800</lastBuildDate>
+        <category term="TTS" />
+        <category term=" Blog" />
+        <item>
+            <guid isPermalink="true">http://yoursite.com/pub/PSE/</guid>
+            <title>Phase Spectrum Recovery for Enhancing Low-Quality Speech Captured by Laser Microphones</title>
+            <link>http://yoursite.com/pub/PSE/</link>
+            <category term="Publications" scheme="http://yoursite.com/categories/pub/" />
+            <category term="Publication" scheme="http://yoursite.com/tags/Publication/" />
+            <pubDate>Mon, 01 Mar 2021 20:45:48 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;abstract&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#abstract&#34;&gt;#&lt;/a&gt; Abstract&lt;/h1&gt;
+&lt;p&gt;This paper proposes a phase spectrum recovery method for enhancing the low-quality speech captured by laser micro-phones, which is degraded by non-additive distortions during signal acquisition. Our preliminary study shows that common speech enhancement methods based on amplitude spectrum estimation can not achieve a satisfactory performance on this task. Therefore, this paper designs a speech enhancement model which is comprised of an amplitude spectrum estimator (ASE) and a phase spectrum estimator (PSE). The ASE adopts autoregressive LSTMs and multi-target learning framework to predict clean amplitude spectra from noisy ones. The PSE first adopts a waveform-based model to enhance noisy speech in time domain, and then extracts phase spectra from the enhanced waveforms. Subsequently, the outputs of the two estimators are combined to reconstruct the final enhanced speech waveforms. Our experimental results demonstrate that our proposed method can achieve higher PESQ score than the method using only ASE and the waveform-based speech enhancement methods, including UNet and TCNN.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2RvY3VtZW50LzkzNjIxMTI=&#34;&gt;paper&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
